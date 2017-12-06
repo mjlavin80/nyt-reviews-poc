@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Printed Book Review</title>
+    <title>Textures of Taste</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
@@ -23,9 +23,10 @@
         color: black;
         font-variant: small-caps;
       }
-      h2 {
+      .remark-slide-content h2 {
         font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
         font-weight: normal;
+        font-size: 35px;
         color: black;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -123,60 +124,169 @@
 
 class: middle
 
-# Large Scale, Computational Methods for the Printed Book Review: A "Data Lifecycle" Approach
+# Textures of Taste:
+
+## Uncovering the Material and Linguistic Codes of Historical Book Reviews
 
 <hr>
-### Matthew J. Lavin
-### Clinical Assistant Professor of English and Director of Digital Media Lab
-### University of Pittsburgh
-### BH and DH, September 2017
-### @mjlavin80
+#### Matthew J. Lavin
+#### Clinical Assistant Professor of English and Director of Digital Media Lab
+#### University of Pittsburgh
+#### Materialities of Writing Works-in-Progress Symposium
+#### @mjlavin80
 
+---
+class: middle
+## <blockquote>"In this collection of seven stories the author has shown a great deal of deep feeling and real ability, but many of the stories are too ambitious, and seem to be more the work of promise than of fulfillment." (<em>The New York Times</em>)</blockquote>
+---
+class: middle
+### <blockquote>"<em>The Troll Garden</em> is a collection of freak stories that are either lurid, hysterical or unwholesome." (Bessie du Bois for <em>The Bookman</em>)
+---
+class: middle
+## We need a more comprehensive study of the rhetorical and material norms of the book review itself.
+---
+class: middle
+### For many, reviews are everyday documents so familiar as to seem self-evident, pure expressions of recommendation, condemnation, or something between the two.
+---
+class: middle
+## Book historians and book historically sensitive literature scholars have worked extensively against the idea that review's text should be considered in apart from its publishing context.
+---
+class: middle
+### My talk today is a methodological experiment but, foremost, it attempts to engage with existing scholarship on the turn-of-the-century American book review.
+---
+class: middle
+## How did book reviews in <em>The New York Times</em> represent or code gender around the turn of the century? Were there any clear associations with instruction, morality, sentiment, and genre?
+---
+class: middle
+### Web accessible, web searchable, and computable are three distinct levels of digital access.
+---
+class: middle
+## To convert <em>New York Times</em> pdfs to a computable corpus, I took several difficult and impressive steps. :)
+- Get metadata from NYT API - derive pdf URLs
+- Download all pdf content from NYT website
+- OCR all pdfs with AbbyyFinereader
+- Construct lightweight database to associate each OCR text block with original metadata
+- Label all content "Single focus review" or "other" - narrows 3,400 items to 1000
+- Label author and assumed gender of all reviews that list author in headline
+---
+class: middle
+
+<img src="images/male_corr.png"/>
+---
+class: middle
+
+<img src="images/female_corr.png"/>
+---
+class: middle
+## Machine Learning Steps
+- Process uncorrected OCR to make more accurate
+- Remove punctuation, numerals, non alphabetic characters
+- Convert to term frequency tables
+- Train logistic regression model using term frequencies and gender labels for 435 reviews
+- Make predictions on 100 reviews
+- Compare predictions to labels
+- Record results, reshuffle train and test set members, repeat
+---
+class: middle
+## Understanding Logistic Regression
+<hr>
+<img width="100%" src="images/logistic.png"/>
+---
+class: middle
+## Logistic Regression by Gender
+<img width="100%" src="images/logistic_by_gender.png"/>
+---
+class: middle
+<table class="table table-bordered table-hover table-condensed">
+<tbody><tr>
+<td>Predicted Male</td>
+<td>Labeled Male</td>
+<td align="right">36724</td>
+</tr>
+<tr>
+<td>Predicted Female</td>
+<td>Labeled Male</td>
+<td align="right">9355</td>
+</tr>
+<tr>
+<td>Predicted Male</td>
+<td>Labeled Female</td>
+<td align="right">1910</td>
+</tr>
+<tr>
+<td>Predicted Female</td>
+<td>Labeled Female</td>
+<td align="right">2011</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>Predicted Male</td>
+<td>Labeled Male</td>
+<td align="right">36649</td>
+</tr>
+<tr>
+<td>Predicted Female</td>
+<td>Labeled Male</td>
+<td align="right">9335</td>
+</tr>
+<tr>
+<td>Predicted Male</td>
+<td>Labeled Female</td>
+<td align="right">1907</td>
+</tr>
+<tr>
+<td>Predicted Female</td>
+<td>Labeled Female</td>
+<td align="right">2009</td>
+</tr>
+</tbody></table>
+---
+class: middle
+<table class="table table-bordered table-hover table-condensed">
+<tbody><tr>
+<td>Accuracy</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>overall</td>
+<td align="right">0.7747</td>
+</tr>
+<tr>
+<td>accuracy_female</td>
+<td align="right">0.487120632</td>
+</tr>
+<tr>
+<td>accuracy_male</td>
+<td align="right">0.796979101</td>
+</tr>
+<tr>
+<td> </td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>overall</td>
+<td align="right">0.77316</td>
+</tr>
+<tr>
+<td>accuracy_female</td>
+<td align="right">0.486976507</td>
+</tr>
+<tr>
+<td>accuracy_male</td>
+<td align="right">0.796994607</td>
+</tr>
+</tbody></table>
 ---
 class: middle troll
----
-class: top nyt-1
-(Lognormal)
-#### Lengths of book reviews in <em>The New York Times</em>, April 1905
----
-class: top nyt-2
-(Converted to Normal)
-#### Lengths of book reviews in <em>The New York Times</em>, April 1905
----
-class: top lifecycle-all
 
-#### Data Lifecycle Iconography
----
-class: middle ddi
-
-<div class="acknowledgment">My thanks to Ben Miller, Alison Langmead, Annette Vee, Daniel Libertz, Lucio LoTempio, and Zach Luettgen for their work on the "Computational Aproaches to Textual Networks"</div>
----
-class: top collo
-
-## Web accessible and computable are not the same thing?
-
-
----
-class: middle tf
----
-class: middle amazon
----
-class: middle goodreads
----
-class: middle bookman
----
-class: middle women-short-story
----
-class: middle troll-sf
----
-class: middle troll-sf-ocr
----
-class: middle document
----
-class: middle data
-
-### <blockquote>"We shouldn’t think of data as a natural resource but as a cultural one that needs to be generated, protected, and interpreted."</blockquote>
-#### -- Lisa Gitelman, press materials for <em>Raw Data Is an Oxymoron</em>.
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
