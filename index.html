@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Printed Book Review</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+
+      th {color: white; background-color: black; padding-top: 7px; padding-bottom: 7px;}
+      td {padding: 3px; }
+      table { width: 100%; border-collapse: collapse;}
+      td, th {border: 1px solid black; font-size: 95%; text-align: center;
+      }
+      body {
+        font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+        color: rgba(34,34,34,.77);
+      }
+      h1 {
+        font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+        font-weight: normal;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color: black;
+        font-variant: small-caps;
+      }
+      h2 {
+        font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+        font-weight: normal;
+        color: black;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+      }
+      h3, h4 {
+        font-size: 115%;
+        color: rgba(34,34,34,.77);
+        font-weight: normal;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      p {
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+      .youtube {
+        width: 100%;
+        height: 45vh;
+      }
+      .middle, .top {
+        background-color: #ffe6cc;
+        background-repeat: no-repeat;
+
+      }
+      .collo {
+        background-image: url('images/collocations.png');
+        background-size: auto 75%;
+        background-position: 50% 85%;
+      }
+      .bookman {
+          background-image: url('images/bookman.png');
+          background-size: auto 90%;
+      }
+      .ddi {
+          background-image: url('images/ddi-lifecycle.png');
+          background-size: 90% auto;
+          background-position: 50% 15%;
+
+      }
+      .lifecycle-all {
+          background-image: url('images/lifecycle-all.png');
+          background-size: 90% auto;
+      }
+      .troll {
+          background-image: url('images/troll-garden.png');
+          background-size: 90% auto;
+      }
+      .troll-sf {
+          background-image: url('images/troll-sf.png');
+          background-size: auto 90%;
+      }
+      .troll-sf-ocr {
+          background-image: url('images/troll-sf-ocr.png');
+          background-size: 90% auto;
+      }
+      .nyt-1 {
+          background-image: url('images/nytimes1.png');
+          background-size: 90% auto;
+
+      }
+      .nyt-2 {
+          background-image: url('images/nytimes2.png');
+          background-size: 90% auto;
+
+      }
+      .goodreads {
+          background-image: url('images/goodreads.png');
+          background-size: auto 85%;
+      }
+      .amazon {
+          background-image: url('images/amazon.png');
+          background-size: 90% auto;
+      }
+      .women-short-story {
+          background-image: url('images/women-short-story.png');
+          background-size: auto 85%;
+      }
+      .tf {
+          background-image: url('images/tf.png');
+          background-size: auto 80%;
+      }
+      .document {
+          background-image: url('images/document.png');
+          background-size: 90% auto;
+      }
+      .acknowledgment {
+        margin-top: 400px;
+        font-size: 130%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: middle
+
+# Large Scale, Computational Methods for the Printed Book Review: A "Data Lifecycle" Approach
+
+<hr>
+### Matthew J. Lavin
+### Clinical Assistant Professor of English and Director of Digital Media Lab
+### University of Pittsburgh
+### BH and DH, September 2017
+### @mjlavin80
+
+---
+class: middle troll
+---
+class: top nyt-1
+(Lognormal)
+#### Lengths of book reviews in <em>The New York Times</em>, April 1905
+---
+class: top nyt-2
+(Converted to Normal)
+#### Lengths of book reviews in <em>The New York Times</em>, April 1905
+---
+class: top lifecycle-all
+
+#### Data Lifecycle Iconography
+---
+class: middle ddi
+
+<div class="acknowledgment">My thanks to Ben Miller, Alison Langmead, Annette Vee, Daniel Libertz, Lucio LoTempio, and Zach Luettgen for their work on the "Computational Aproaches to Textual Networks"</div>
+---
+class: top collo
+
+## Web accessible and computable are not the same thing?
+
+
+---
+class: middle tf
+---
+class: middle amazon
+---
+class: middle goodreads
+---
+class: middle bookman
+---
+class: middle women-short-story
+---
+class: middle troll-sf
+---
+class: middle troll-sf-ocr
+---
+class: middle document
+---
+class: middle data
+
+### <blockquote>"We shouldn’t think of data as a natural resource but as a cultural one that needs to be generated, protected, and interpreted."</blockquote>
+#### -- Lisa Gitelman, press materials for <em>Raw Data Is an Oxymoron</em>.
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
